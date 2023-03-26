@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
-/*
+
 app.use("/createForm", (req, res, next) => {
   const token = req.headers.authorization;
   if(token){
@@ -40,7 +40,7 @@ app.use("/createForm", (req, res, next) => {
   }
 })
 
-*/
+
 
 
 app.get('/api/themes',async  (req, res) => {
@@ -92,15 +92,3 @@ mongoose.connect(
 
 app.listen(PORT , () => {console.log(`server is up and running at port number ${PORT}`)})
 
-/*
-{
-    "name":"Chaitu",
-    "description":"Dogs-Survey",
-    "typeOfSurvey":"Questions",
-    "startDate":"13-08-2020",
-    "endDate":"30-09-2023",
-    "otherCriteria":"slkdjflehsoihflskdnflkdsnl",
-    "image":"dogs.jpg",
-    "user":"Chaitu"
-}
-*/
