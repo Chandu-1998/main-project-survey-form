@@ -1,16 +1,18 @@
 const express = require("express");
-const { body, validationResult } = require('express-validator');
+const { body, validationResult } = require("express-validator");
 const User = require("../models/user");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const fileUpload = require("express-fileupload")
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const fileUpload = require("express-fileupload");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const middleware = require('../middleware')
 const secret = "MAINPROJECT";
 
 const router = express.Router();
 mongoose.set("strictQuery", true);
 router.use(cors());
+
 router.use(fileUpload())
 router.use(express.json());
  
