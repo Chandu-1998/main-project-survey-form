@@ -1,5 +1,7 @@
 const express = require("express");
+
 const PORT = 8080 || process.env.PORT;
+
 const mongoose = require("mongoose");
 require('dotenv').config()
 const profile = require("./models/profile")
@@ -39,6 +41,7 @@ app.use("/createForm", (req, res, next) => {
       })
   }
 })
+
 app.get('/api/themes',async  (req, res) => {
 //     theme.deleteMany(data.data)
 //console.log(datas)
@@ -49,6 +52,7 @@ app.get('/api/themes',async  (req, res) => {
 //    theme.insertMany(datas.data)
 const data = await theme.find()
     res.json({
+
         datas
     }
     ); 
@@ -63,6 +67,7 @@ app.post('/api/themes', async(req,res)=>{
     }
     ); 
 })
+
 
 app.post("/profile" , async (req,res) => {
   console.log(req.body)
@@ -88,4 +93,6 @@ mongoose.connect(
    
 ).then(() => console.log("connected to db"))
 
+
 app.listen(PORT , () => {console.log(`server is up and running at port number ${PORT}`)})  
+
