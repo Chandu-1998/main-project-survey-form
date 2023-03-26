@@ -10,7 +10,7 @@ const surveySchema = new mongoose.Schema(
     typeOfSurvey: {type: String,require: true,},
     user:{type:String}
     // image:{type:String, required:true},
-  },    
+  }, 
   { timestamps: true }
 );
 const surveyModel = mongoose.model("survey", surveySchema);

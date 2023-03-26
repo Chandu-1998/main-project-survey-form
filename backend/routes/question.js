@@ -36,7 +36,7 @@ app.get("/list" , async(req,res) => {
 
 app.get("/user", async (req, res) => {
     const userid = req.user;
-    const user = await User.findOne({ _id:userid });
+    const user = await User.findOne({ _id: userid });
   res.status(200).json({
     name: user.name,
   });  
@@ -44,7 +44,7 @@ app.get("/user", async (req, res) => {
 app.delete("/delete",async(req,res) => {
    
    await survey.deleteOne({_id:req.query.id})
-    console.log(Lists)
+    // console.log(Lists)
 
     res.json({
      message:"Deleted succesfully"
