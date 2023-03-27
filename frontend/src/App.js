@@ -25,11 +25,6 @@ function App() {
   const getData = () => {
     const token = sessionStorage.getItem('token')
     console.log(token)
-    // if (!token) {
-    //   navigate("/")
-    //   alert("Please login ")
-    //   return
-    // }
 
     fetch("http://localhost:8080/createForm/list", {
       headers: { Authorization: token }
