@@ -55,6 +55,8 @@ function App() {
             <Route path="/surveyForm" element={<List />} />
             <Route path="/preview" element={<Preview />} />
             <Route path="/form" element={<SurveyForm />} />
+            <Route path="/header" element={<Header/>} />
+            <Route path="/sidebar" element={<Sidebar />} />
 
 
           </Routes>
