@@ -1,20 +1,16 @@
 const express = require("express");
-
-const { body, validationResult } = require("express-validator");
+const { body, validationResult } = require('express-validator');
 const User = require("../models/user");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const fileUpload = require("express-fileupload");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const middleware = require('../middleware')
-
+const fileUpload = require("express-fileupload")
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const secret = "MAINPROJECT";
 
 const router = express.Router();
 mongoose.set("strictQuery", true);
 router.use(cors());
-
 router.use(fileUpload())
 router.use(express.json());
  
@@ -45,7 +41,12 @@ console.log(req.body)
                         message:"Invalid Phone Number"
                     })
                 }
-
+                else if(password != confirmpassword){
+                    return res.json.status(400).json({
+                        message:"Password and Confirm Password should be same"
+                    })
+                    }
+                
                  else {
                     return res.status(400).json({
                       message: "Invalid Password"
@@ -62,15 +63,7 @@ console.log(req.body)
                     message: "User already exists"
                 });
             }
-
-            if (password !== confirmpassword) {
-                return res.status(400).json({
-                  message: "Password and Confirm Password should be same",
-                });
-              }
-
         
-
             bcrypt.hash(password, 10, async function (err, hash) {
            
                 if (err) {
@@ -131,11 +124,7 @@ router.post("/login",
                 }
                 if (result) {
                     const token = jwt.sign({
-
-                        expiresIn: '365d',
-
-                        
-
+                        exp: Math.floor(Date.now() / 1000) + (60 * 60),
                         data: user._id,
                     }, secret);
 
@@ -161,6 +150,4 @@ router.post("/login",
             })
         }
     });
-
 module.exports = router;
-
