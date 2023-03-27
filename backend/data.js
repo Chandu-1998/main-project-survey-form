@@ -6,7 +6,10 @@ const data = [
         name: 'Dark',
     },
     {
-        name:"pink"
+        name:"pink",
+    },
+    {
+        name:"red"
     }
 ];
 

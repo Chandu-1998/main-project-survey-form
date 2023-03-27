@@ -89,6 +89,10 @@
     background-color: #ec6ec6;
     color:#4d1e4b
 }
+.theme-btn-yellow{
+    background-color:yellow;
+    color:aqua ;
+}
 .theme-btn:hover{
     cursor: pointer;
     transform:scale(1.1);
