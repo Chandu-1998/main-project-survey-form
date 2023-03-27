@@ -2,11 +2,10 @@ import React, { useState, useContext, useEffect } from "react";
 import "./Styles/header.css"
 import image from "./images/profile.svg"
 import LogoutIcon from '@mui/icons-material/Logout';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import { ThemeContext } from "../App";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { Link, useNavigate } from "react-router-dom";
-
-import "./Previews.css"
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
     const { themes, setThemes, first, setFirst } = useContext(ThemeContext)
@@ -31,14 +30,13 @@ const Header = () => {
         if(!token){
             navigate("/")
         }
-        setThemes("Default")
+        // setThemes("Default")
     },[])
     useEffect(() => {
         fetchtheme()
     
     }, [first])
     const handleTheme = async () => {
-
         if (!open) {
             setOpen(true)
         }
@@ -84,10 +82,10 @@ const Header = () => {
     const uploadProfile = (image) => {
         const formData = new FormData();
         formData.append("file", image);
-        formData.append("upload_preset", "Survey");
+        formData.append("upload_preset", "profilepic");
  
         console.log(image)
-        fetch("https://api.cloudinary.com/v1_1/dml28rdbk/image/upload", {
+        fetch("https://api.cloudinary.com/v1_1/asrazareen/image/upload", {
             method: "POST",
             body: formData,
         })
@@ -103,12 +101,16 @@ const Header = () => {
                 <h3 className={`logo ${themes ? `logo-${themes}` : null}`}>LOGO</h3>
                 <div className="profile" >
                     <div className="theme-div dropdown-wrapper " >
+                    
                         <select className={`theme-btn trigger-button ${themes ? `theme-btn-${themes}` : null} dropdown-toggle `}
-                            onChange={(e)=>{setThemes(e.target.value)}} >
-                              <option>Change Theme <ArrowDropDownIcon/></option> 
-                            <option>Default</option>
-                            <option>Dark</option>
-                            <option>pink</option>
+                            // onClick={handleTheme}
+                            onChange={(e)=>setThemes(e.target.value)}
+                             >
+                                {/* Change Theme <ArrowDropDownIcon/> */}
+                                <option>Change Theme</option>
+                                <option>Default</option>
+                                <option>Dark</option>
+                                <option>pink</option>
                             </select>
                             <div className="dropdown" >
                             <ul className={` ${open ? 'open' : null}`}>
@@ -134,9 +136,6 @@ const Header = () => {
                         navigate("/")}}  >
                         <LogoutIcon />
                         Logout
-                    </div>
-                    <div className="preview">
-                    <Link to={'/preview'}><button>Preview</button></Link>
                     </div>
                 </div>
             </div>

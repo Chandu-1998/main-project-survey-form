@@ -4,6 +4,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom"
 import Header from './Components/Header';
 import Sidebar from './Components/Sidebar';
 import SurveyList from './Components/survey-list';
+import Preview from "./Components/preview"
 import Login from './Components/LogIn/Login';
 import Register from './Components/Register/Register';
 import SurveyForm from './Components/survey-form';
@@ -44,18 +45,16 @@ function App() {
       <div className="App">
 
         <BrowserRouter>
-          <Header/>
-        <Sidebar/>
-        {/* <Preview/> */}
+          {/* <Header/>
+        <Sidebar/> */}
           <Routes>
-            {/* <Route path='/' element={<Login />} />
-            <Route path="/register" element={<Register />} /> */}
-            {/* <Route path="/Header" element={<Header />} />
-            <Route path="/sidebar" element={<Sidebar />} /> */}
-            {/* <Route path="/main" element={<SurveyList />} /> */}
+            <Route path='/' element={<Login />} />
+            <Route path="/register" element={<Register />} />
+
+            <Route path="/main" element={<SurveyList />} />
             <Route path="/surveyForm" element={<List />} />
-            
-            {/* <Route path="/form" element={<SurveyForm />} /> */}
+            <Route path="/preview" element={<Preview />} />
+            <Route path="/form" element={<SurveyForm />} />
 
 
           </Routes>
