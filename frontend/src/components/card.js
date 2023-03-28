@@ -48,3 +48,8 @@ const Card = ({ details }) => {
 }
 
 export default Card;
+
+
+
+
+

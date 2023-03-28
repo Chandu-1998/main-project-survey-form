@@ -94,3 +94,32 @@
     cursor: pointer;
     filter: brightness(1.2);
 }
+#set{
+    font-size: 1rem;
+    letter-spacing: 0.16px;
+    padding: .3rem 0;
+    margin-left: .8rem;
+    width:150px;
+    border-radius: 4px;
+    transform: scale(1);
+    height: 30px;
+    position: relative;
+    top:10px;
+    transition: .3s all ease-in-out;
+    background-color: #8A5DEF;
+    color:white;
+}
+.set-btn{
+    position:relative;
+    /* top:0.1px; */
+    bottom: 2px;
+}
+.set-one{
+    position: relative;
+    bottom: 10px;
+    text-decoration: none;
+}
+.set-two{
+    text-decoration: none;
+    color:white;
+}

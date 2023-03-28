@@ -47,9 +47,9 @@ const List = () => {
     const uploadImage = (image) => {
         const formData = new FormData();
         formData.append("file", image);
-        formData.append("upload_preset", "instapost");
+        formData.append("upload_preset", "Survey");
    
-        fetch("https://api.cloudinary.com/v1_1/asrazareen/image/upload", {
+        fetch("https://api.cloudinary.com/v1_1/dml28rdbk/image/upload", {
             method: "POST",
             body: formData,
         })

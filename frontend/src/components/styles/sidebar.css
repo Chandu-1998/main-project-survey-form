@@ -1,9 +1,9 @@
-.sidebar-container{
-    width:75px;
-    height:100vh;
-   
-    position:fixed;
-    top:70px;
+.sidebar-container {
+    width: 75px;
+    height: 100vh;
+
+    position: fixed;
+    top: 70px;
     padding-top: 18%;
     display: flex;
     flex-direction: column;
@@ -13,37 +13,52 @@
     overflow: hidden;
     margin-top: -70px;
 }
-.sidebar-container-Default{
+
+.sidebar-container-Default {
     background-color: #278DF1;
 }
-.sidebar-container-Dark{
+
+.sidebar-container-Dark {
     background-color: #196abb;
 }
-.sidebar-container-pink{
-    background-color:#ec6ec6 ;
-}
-.side-icon{
-    color:#FFFFFF;
-   
-    height:47px;
-   width:100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-    transition: .4s all ease-in-out;
-   
+
+.sidebar-container-pink {
+    background-color: #ec6ec6;
 }
 
-.icon-Default:hover{
+.side-icon {
+    color: #FFFFFF;
+
+    height: 47px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s all ease-in-out;
+
+}
+
+.icon-Default:hover {
     color: #278DF1;
     background-color: #FFFFFF;
 }
-.icon-Dark:hover{
+
+.icon-Dark:hover {
     color: #196abb;
     background-color: #FFFFFF;
 }
-.icon-pink:hover{
+
+.icon-pink:hover {
     color: #ec6ec6;
     background-color: #FFFFFF;
 }
 
+.prev-btn2 {
+    box-sizing: border-box;
+    border-left: 50px solid white;
+    border-right: 50px solid white;
+    background-color: white;
+    color: #196abb;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+}
