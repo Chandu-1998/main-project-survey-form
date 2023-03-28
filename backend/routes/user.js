@@ -41,12 +41,6 @@ console.log(req.body)
                         message:"Invalid Phone Number"
                     })
                 }
-                else if(password != confirmpassword){
-                    return res.json.status(400).json({
-                        message:"Password and Confirm Password should be same"
-                    })
-                    }
-                
                  else {
                     return res.status(400).json({
                       message: "Invalid Password"
@@ -63,7 +57,11 @@ console.log(req.body)
                     message: "User already exists"
                 });
             }
-        
+            if (password !== confirmpassword) {
+                return res.status(400).json({
+                  message: "Password and Confirm Password should be same",
+                });
+              }
             bcrypt.hash(password, 10, async function (err, hash) {
            
                 if (err) {
@@ -124,7 +122,7 @@ router.post("/login",
                 }
                 if (result) {
                     const token = jwt.sign({
-                        exp: Math.floor(Date.now() / 1000) + (60 * 60),
+                        expiresIn: '365d',
                         data: user._id,
                     }, secret);
 
@@ -150,4 +148,4 @@ router.post("/login",
             })
         }
     });
-module.exports = router;
+module.exports = router;

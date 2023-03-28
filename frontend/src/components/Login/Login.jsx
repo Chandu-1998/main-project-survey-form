@@ -26,6 +26,28 @@ function Login() {
         sessionStorage.setItem('token',token);
         setMessage(data.message)
         setStatus(data.status)
+        console.log(email.split("@"))
+        console.log(email.length)
+        let flag = 0
+        for(let i=0; i<email.length; i++)
+        {
+            if(email[i]=='@')
+            {
+                flag=0
+               
+                break;
+            }
+            else{
+                flag = 1
+            }
+        }
+        if(flag == 1){
+            alert('enter valid email')
+
+        }
+else{
+    alert('email exist')
+}
     }
 
     useEffect(() => {
