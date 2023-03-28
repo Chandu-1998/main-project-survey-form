@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import "./Styles/sidebar.css"
+// import "./Styles/sidebar.css"
+import './styles/sidebar.css'
 import HomeIcon from '@mui/icons-material/Home';
 import GroupsIcon from '@mui/icons-material/Groups';
 import DensitySmallIcon from '@mui/icons-material/DensitySmall';

@@ -3,7 +3,9 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate,useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
-import "./Styles/form.css"
+// import "./Styles/form.css"
+import './styles/form.css'
+import SettingsIcon from '@mui/icons-material/Settings';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Header from "./Header";
@@ -166,6 +168,7 @@ const SurveyForm = () => {
                         <h3 >Create Question</h3>
                     </div>
                     <div>
+                        {/* <button> <SettingsIcon/> Theme Settings</button> */}
                         <button className={`prev-btn ${themes ? `close-${themes}` : null}`} onClick={handlePreview} >Preview</button>
                         <button className={`prev-btn ${themes ? `save-${themes}` : null}`} onClick={handleSave}  >Save</button>
                     </div>

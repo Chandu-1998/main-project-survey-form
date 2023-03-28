@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
-import "./Styles/header.css"
+// import "./Styles/header.css"
+import './styles/header.css'
 import image from "./images/profile.svg"
 import LogoutIcon from '@mui/icons-material/Logout';
 import { ThemeContext } from "../App";
