@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect, createContext } from 'react';
 import { Routes, Route, BrowserRouter } from "react-router-dom"
+
 // import Header from './Components/Header';
 // import Sidebar from './Components/Sidebar';
 // import SurveyList from './Components/survey-list';
@@ -21,12 +22,14 @@ import SurveyForm from './components/survey-form';
 import List from './components/survey-form';
 import Themes from './components/Themes';
 
+
 export const ThemeContext = createContext()
 
 
 
 function App() {
-
+  
+ 
   const [themes, setThemes] = useState([])
   const [first, setFirst] = useState(0)
   const [data,setData]=useState([])
@@ -44,7 +47,7 @@ function App() {
       .then(data => setData(data.lists))
 
   }
-  const value = { themes, setThemes, first, setFirst, formdata, questionData, getData,data,setData }
+  const value = { themes, setThemes, first, setFirst, formdata, questionData, getData,data,setData}
 
   return (
     <ThemeContext.Provider value={value}  >
@@ -52,8 +55,7 @@ function App() {
 
         <BrowserRouter>
           {/* <Header/>
-        <Sidebar/> */}
-        {/* <Themes/>   */}
+
           <Routes>
             <Route path='/' element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -61,7 +63,9 @@ function App() {
             <Route path="/main" element={<SurveyList />} />
             <Route path="/surveyForm" element={<List />} />
             <Route path="/preview" element={<Preview />} />
-            {/* <Route path='/Themes' element={<Themes/>}/> */}
+
+            <Route path='/Themes' element={<Themes /> } />
+
             <Route path="/form" element={<SurveyForm />} />
             <Route path="/header" element={<Header/>} />
             <Route path="/sidebar" element={<Sidebar />} />

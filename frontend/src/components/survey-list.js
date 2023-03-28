@@ -8,6 +8,8 @@ import { ThemeContext } from "../App";
 import Header from "./Header";
 import Sidebar from './Sidebar';
 import Card from "./card";
+import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import SortIcon from '@mui/icons-material/Sort';
 // console.log(data)
 const SurveyList = () => {
 
@@ -59,6 +61,8 @@ const SurveyList = () => {
                                     }
                                 }} />
                         </div>
+                        <span className="sort">< SortIcon/></span>
+                        <span className="filter">< FilterAltIcon/></span>
                         <button className={`theme-btn theme-btn-${themes} create-btn `}
                             onClick={() => { navigate("/surveyForm") }} >Create</button>
                     </div>

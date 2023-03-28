@@ -83,10 +83,10 @@ const Header = () => {
     const uploadProfile = (image) => {
         const formData = new FormData();
         formData.append("file", image);
-        formData.append("upload_preset", "profilepic");
+        formData.append("upload_preset", "Survey");
  
         console.log(image)
-        fetch("https://api.cloudinary.com/v1_1/asrazareen/image/upload", {
+        fetch("https://api.cloudinary.com/v1_1/dml28rdbk/image/upload", {
             method: "POST",
             body: formData,
         })
@@ -102,8 +102,11 @@ const Header = () => {
                 <h3 className={`logo ${themes ? `logo-${themes}` : null}`}>LOGO</h3>
                 <div className="profile" >
                     <div className="theme-div dropdown-wrapper " >
+
+
                         <button className={`theme-btn trigger-button ${themes ? `theme-btn-${themes}` : null} dropdown-toggle `}
                             onClick={handleTheme} >Change Theme <ArrowDropDownIcon/></button>
+
                             <div className="dropdown" >
                             <ul className={` ${open ? 'open' : null}`}>
                             {data.map((theme,index) => {
