@@ -96,7 +96,11 @@ const Header = () => {
     }
 
     return (
-        <div className="container" >
+        <div id="container"
+        className={`theme-btn trigger-button ${themes ? `theme-btn-${themes}` : null} dropdown-toggle `}
+        // onClick={handleTheme}
+        onChange={setThemes('Default')} 
+        >
              <div className={`header-container ${themes? `header-container-${themes}` : null}`}>
                 <h3 className={`logo ${themes ? `logo-${themes}` : null}`}>LOGO</h3>
                 <div className="profile" >

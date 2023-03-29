@@ -124,7 +124,7 @@ router.post("/login",
                 }
                 if (result) {
                     const token = jwt.sign({
-                        expiresIn: '24h',
+                        exp: Math.floor(Date.now() / 1000) + (60 * 60),
                         data: user._id,
                     }, secret);
 

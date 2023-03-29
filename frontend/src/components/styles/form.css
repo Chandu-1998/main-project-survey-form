@@ -94,7 +94,7 @@
     cursor: pointer;
     filter: brightness(1.2);
 }
-#set{
+.set{
     font-size: 1rem;
     letter-spacing: 0.16px;
     padding: .3rem 0;

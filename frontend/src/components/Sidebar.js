@@ -19,13 +19,13 @@ const navigate=useNavigate()
         <>
         <div className={`sidebar-container ${themes ? `sidebar-container-${themes}` : null}`} >
             <div className={`side-icon ${themes? `icon-${themes}`: null}`} >
-            <div className={`prev-btn1 ${themes ? `HomeIcon-${themes}` : null}`} onClick={home}><HomeIcon/></div>
+            <div className={`prev-btn ${themes ? `HomeIcon-${themes}` : null}`} onClick={home}><HomeIcon/></div>
             </div>
             <div className={`side-icon ${themes? `icon-${themes}`: null}`} >
-            <div className={`prev-btn2 ${themes ? `HomeIcon-${themes}` : null}`} onClick={density}><GroupsIcon/></div>
+            <div className={`prev-btn1 ${themes ? `HomeIcon-${themes}` : null}`} onClick={density}><GroupsIcon  /></div>
             </div>
             <div className={`side-icon ${themes? `icon-${themes}`: null}`} >
-             <div className={`prev-btn3 ${themes ? `HomeIcon-${themes}` : null}`} onClick={density}><DensitySmallIcon/></div>
+             <div className={`prev-btn ${themes ? `HomeIcon-${themes}` : null}`} onClick={density}><DensitySmallIcon /></div>
             </div>
         </div>
         </>

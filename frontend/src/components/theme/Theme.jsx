@@ -7,17 +7,15 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useNavigate,useLocation} from "react-router-dom";
 import Sidebar from "../Sidebar";
 import Header from "../Header";
-import "../Styles/Thememodal.css"
 // import useHistory from 'use-history'
 
 
-const Themes = ({ opens, onClose }) => {
+const Themes = () => {
   const { themes, setThemes, first, setFirst , formdata ,questionData} = useContext(ThemeContext)
   const location = useLocation()
   const [open, setOpen] = useState(false)
   const [data, setData] = useState([])
   const navigate = useNavigate()
-  if (!opens) return null;
   // const history = useHistory();
   const [questions, setQuestions] = useState([{
     question: "",
@@ -43,6 +41,7 @@ const [option, setOptions] = useState([{
       })
   }
 
+
   // function handleClick() {
   //   history.push('/main');
   // }
@@ -53,7 +52,7 @@ const [option, setOptions] = useState([{
     if (!token) {
       navigate("/")
     }
-    setThemes("Default")
+    setThemes("pink")
   }, [])
   useEffect(() => {
     fetchtheme()
@@ -101,13 +100,13 @@ const [option, setOptions] = useState([{
         body: questionData 
     }).then(res=>res.json())
     .then(data => {  navigate('/preview')})
+    // useEffect(()=>{
+    //   setThemes("Default")
+    // })
 }
   return (
-    <div id="themebody"onClick={onClose} className='overlay'>
-      <div id="box" onClick={(e) => {
-          e.stopPropagation();
-        }}
-        className='modalContainer'>
+    <div id="themebody">
+      <div id="box">
         <div id="settings">
           <h1>Theme Settings</h1>
           <span id="close" className={`cls-btn ${themes ? `cancel-${themes}` : null}`} onClick={() => {navigate("/form")}}><CloseIcon/></span>
@@ -123,8 +122,8 @@ const [option, setOptions] = useState([{
           >
             {/* Change Theme <ArrowDropDownIcon/> */}
             {/* <option>Change Theme</option> */}
-            <option>Default</option>
             <option>Dark</option>
+            <option>Default</option>
             <option>pink</option>
           </select>
         </div>
@@ -196,7 +195,7 @@ const [option, setOptions] = useState([{
         </div>
         <center>
           {/* <button className="cancel">Cancel</button> */}
-          <button className={`prev-btn ${themes ? `cancel-${themes}` : null}`} onClick={() => {navigate("/form")}}>cancel</button>
+          {/* <button className={`prev-btn ${themes ? `cancel-${themes}` : null}`} onClick={() => {navigate("/form")}}>cancel</button> */}
           <button className={`prev-btn ${themes ? `save-${themes}` : null}`} onClick={() => {navigate("/form")}}>Save</button>
           {/* <button onClick={handleClick}>Save</button> */}
         </center>
@@ -235,10 +234,3 @@ const [option, setOptions] = useState([{
   );
 };
 export default Themes;
-
-
-
-
-
-
-

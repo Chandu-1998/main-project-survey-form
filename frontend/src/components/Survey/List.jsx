@@ -66,7 +66,8 @@ const List = () => {
         <div className='createsurvey' >
             <div className='header'>
                 <h1>Create Survey</h1>
-                <button id='btnfirst'>Cancel</button>
+                <Link to={"/main"}><button id='btnfirst'>Cancel</button></Link>
+                {/* <Link to ="/main"> <button className={`prev-btn ${themes ? `save-${themes}` : null}`} onClick={handleSave}  >Save</button></Link> */}
                 <button id='lastbtn' onClick={handleNext}  >Next</button>
             </div>
             <div className='inputcontainer'>
