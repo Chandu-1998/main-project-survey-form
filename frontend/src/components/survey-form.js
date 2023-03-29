@@ -12,12 +12,9 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Theme from "./theme/Theme"
 import SettingsIcon from '@mui/icons-material/Settings';
-import "../Components/Styles/Thememodal.css"
-
 
 
 const SurveyForm = () => {
-    const [openModal, setOpenModal] = useState(false)
     const navigate = useNavigate();
     const location = useLocation()
     const { themes, formdata ,questionData } = useContext(ThemeContext)
@@ -50,10 +47,6 @@ const SurveyForm = () => {
    
 
 ])
-
-
-
-
 
     const handleChange = (text, i) => {
         let newques = [...questions];
@@ -134,7 +127,7 @@ const SurveyForm = () => {
             headers:{Authorization:token},
             body: questionData 
         }).then(res=>res.json())
-        .then(data => {  navigate('/preview')})
+        .then(data => {  navigate('/main')})
     }
 
     const handlePreview = () => {
@@ -174,9 +167,6 @@ const SurveyForm = () => {
     }
     return (
         <>
-        <Theme
-      open={openModal} 
-      onClose={() => setOpenModal(false)} />
         <Header/>
         <Sidebar/>
             <div className={`form-container form-container-${themes}`} >
@@ -187,10 +177,10 @@ const SurveyForm = () => {
                     </div>
                     <div>
 
-                    <button id="set" onClick={() => setOpenModal(true)} className='modalButton'><Link to ={"/Themes"} className="set-two" ><span className="set-btn"><SettingsIcon/></span><span className="set-one">Theme settings</span></Link> </button>
+                    <button className="set"><Link to ={"/Themes"} className="set-two" ><span className="set-btn"><SettingsIcon/></span><span className="set-one">Theme settings</span></Link> </button>
+                       <a href ="/preview"> <button className={`prev-btn ${themes ? `close-${themes}` : null}`} onClick={handlePreview} >Preview</button></a>
+                       <Link to ="/main"> <button className={`prev-btn ${themes ? `save-${themes}` : null}`} onClick={handleSave}  >Save</button></Link>
 
-                        <button className={`prev-btn ${themes ? `close-${themes}` : null}`} onClick={handlePreview} >Preview</button>
-                        <button className={`prev-btn ${themes ? `save-${themes}` : null}`} onClick={handleSave}  >Save</button>
                         
                     </div>
                 </div>
