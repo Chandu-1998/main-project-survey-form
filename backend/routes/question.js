@@ -3,7 +3,7 @@ const cors = require("cors")
 const Question = require("../models/question")
 const User = require('../models/user')
 const fileUpload = require("express-fileupload")
-const survey = require("../models/survey")
+const survey = require("../models/Survey")
 // const fileupload = require("express-fileupload"); 
 const app = express()
 app.use(express.json());
