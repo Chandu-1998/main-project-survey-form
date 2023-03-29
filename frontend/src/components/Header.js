@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
-import "./Styles/header.css"
+// import "./Styles/header.css"
+import './styles/header.css'
 import image from "./images/profile.svg"
 import LogoutIcon from '@mui/icons-material/Logout';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import { ThemeContext } from "../App";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useNavigate } from "react-router-dom";
@@ -30,13 +30,14 @@ const Header = () => {
         if(!token){
             navigate("/")
         }
-        // setThemes("Default")
+        setThemes("Default")
     },[])
     useEffect(() => {
         fetchtheme()
     
     }, [first])
     const handleTheme = async () => {
+
         if (!open) {
             setOpen(true)
         }
@@ -105,17 +106,11 @@ const Header = () => {
                 <h3 className={`logo ${themes ? `logo-${themes}` : null}`}>LOGO</h3>
                 <div className="profile" >
                     <div className="theme-div dropdown-wrapper " >
-                    
-                        {/* <select className={`theme-btn trigger-button ${themes ? `theme-btn-${themes}` : null} dropdown-toggle `}
-                            // onClick={handleTheme}
-                            onChange={(e)=>setThemes(e.target.value)} */}
-                             {/* > */}
-                                {/* Change Theme <ArrowDropDownIcon/> */}
-                                {/* <option>Change Theme</option>
-                                <option>Default</option>
-                                <option>Dark</option>
-                                <option>pink</option>
-                            </select> */}
+
+
+                        <button className={`theme-btn trigger-button ${themes ? `theme-btn-${themes}` : null} dropdown-toggle `}
+                            onClick={handleTheme} >Change Theme <ArrowDropDownIcon/></button>
+
                             <div className="dropdown" >
                             <ul className={` ${open ? 'open' : null}`}>
                             {data.map((theme,index) => {

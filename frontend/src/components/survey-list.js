@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import "./Styles/survey-list.css"
+// import "./Styles/survey-list.css"
+import './styles/survey-list.css'
 import data from "../data.json"
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from "react-router-dom";

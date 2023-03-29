@@ -1,4 +1,5 @@
-import "./Styles/preview.css"
+// import "./Styles/preview.css"
+import './styles/preview.css'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate, useLocation } from "react-router-dom";
 import { useContext } from "react";

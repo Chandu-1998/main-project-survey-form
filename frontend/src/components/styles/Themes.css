@@ -205,6 +205,7 @@ button:hover{
     /* height:30px */
 }
 
+
 .theme-btn-Default{
     background-color:#278DF1;
     color:#FFFFFF;
@@ -214,6 +215,7 @@ button:hover{
     color:#FFFFFF
 }
 .theme-btn-pink{
+
     background-color: #ec6ec6;
     color:#4d1e4b
 }
@@ -335,3 +337,4 @@ button:hover{
     width:100%;
     position: absolute;
 }
+
