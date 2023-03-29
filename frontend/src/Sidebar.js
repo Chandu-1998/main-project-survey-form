@@ -10,17 +10,7 @@ import Register from './Components/Register/Register';
 import SurveyForm from './Components/survey-form';
 import List from './Components/Survey/List.jsx';
 import Themes from './Components/theme/Theme';
-// import Themes from './components/Themes';
-// import Header from './Components/Header';
-// import Header from './components/Header';
-// import Sidebar from './components/Sidebar';
-// import SurveyList from './components/survey-list';
-// import Preview from './components/preview';
-// import Login from './components/Login/Login'
-// import Register from './components/Register/Register';
-// import SurveyForm from './components/survey-form';
-// import List from './components/survey-form';
-// import Themes from './components/Themes';
+
 
 export const ThemeContext = createContext()
 
