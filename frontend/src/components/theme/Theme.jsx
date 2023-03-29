@@ -1,17 +1,17 @@
 import React, { useEffect, useState, useContext } from "react";
-import '../Styles/Themes.css'
+import '../styles/Themes.css'
 import CloseIcon from '@mui/icons-material/Close';
 // import { ThemeContext } from "../App";
 import { ThemeContext } from "../../App";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { useNavigate,useLocation} from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import Header from "../Header";
 // import useHistory from 'use-history'
 
 
 const Themes = () => {
-  const { themes, setThemes, first, setFirst , formdata ,questionData} = useContext(ThemeContext)
+  const { themes, setThemes, first, setFirst, formdata, questionData } = useContext(ThemeContext)
   const location = useLocation()
   const [open, setOpen] = useState(false)
   const [data, setData] = useState([])
@@ -21,15 +21,15 @@ const Themes = () => {
     question: "",
     questionType: "radio",
     answer: ""
-}])
-const [option, setOptions] = useState([{
-  options:[
-      {optionText: "value"},
-    {optionText: "value"},
-    {optionText: "value"} ,
-     {optionText: "value"}
-  ]
-}])
+  }])
+  const [option, setOptions] = useState([{
+    options: [
+      { optionText: "value" },
+      { optionText: "value" },
+      { optionText: "value" },
+      { optionText: "value" }
+    ]
+  }])
 
   const fetchtheme = async () => {
     await fetch("http://localhost:8080/api/themes")
@@ -42,9 +42,6 @@ const [option, setOptions] = useState([{
   }
 
 
-  // function handleClick() {
-  //   history.push('/main');
-  // }
 
 
   useEffect(() => {
@@ -77,39 +74,28 @@ const [option, setOptions] = useState([{
 
   }
   const handleSave = () => {
-       
-    // let arr = []
-    // for(let i=0;i<option.length;i++){
-    //     console.log(option[i])
-    //     arr.push(option[i].options)
-    // }
+
+
 
     const token = sessionStorage.getItem("token")
     console.log("hii")
-    // const id = location.state.id
-    // questionData.append("surveyId" , id)
-    // questionData.append("questions" , JSON.stringify(questions))
-    // questionData.append("option",JSON.stringify(arr))
-    // questionData.forEach((val, key) => {
-    //     console.log(val, key)
-    // })
 
     fetch("http://localhost:8080/createForm", {
-        method: "POST",
-        headers:{Authorization:token},
-        body: questionData 
-    }).then(res=>res.json())
-    .then(data => {  navigate('/preview')})
+      method: "POST",
+      headers: { Authorization: token },
+      body: questionData
+    }).then(res => res.json())
+      .then(data => { navigate('/preview') })
     // useEffect(()=>{
     //   setThemes("Default")
     // })
-}
+  }
   return (
     <div id="themebody">
       <div id="box">
         <div id="settings">
           <h1>Theme Settings</h1>
-          <span id="close" className={`cls-btn ${themes ? `cancel-${themes}` : null}`} onClick={() => {navigate("/form")}}><CloseIcon/></span>
+          <span id="close" className={`cls-btn ${themes ? `cancel-${themes}` : null}`} onClick={() => { navigate("/form") }}><CloseIcon /></span>
           {/* <button className={`prev-btn ${themes ? `cancel-${themes}` : null}`} onClick={() => {navigate("/form")}}>cancel</button> */}
         </div>
 
@@ -195,38 +181,14 @@ const [option, setOptions] = useState([{
         </div>
         <center>
           {/* <button className="cancel">Cancel</button> */}
-          {/* <button className={`prev-btn ${themes ? `cancel-${themes}` : null}`} onClick={() => {navigate("/form")}}>cancel</button> */}
-          <button className={`prev-btn ${themes ? `save-${themes}` : null}`} onClick={() => {navigate("/form")}}>Save</button>
+          <button className={`prev-btn ${themes ? `cancel-${themes}` : null}`} onClick={() => { navigate("/form") }}>cancel</button>
+          <button className={`prev-btn ${themes ? `save-${themes}` : null}`} onClick={() => { navigate("/form") }}>Save</button>
           {/* <button onClick={handleClick}>Save</button> */}
         </center>
       </div>
       <div>
         <div className="theme-div dropdown-wrapper " >
 
-          {/* <select className={`theme-btn trigger-button ${themes ? `theme-btn-${themes}` : null} dropdown-toggle `}
-            // onClick={handleTheme}
-            onChange={(e) => setThemes(e.target.value)}
-          >
-            {/* Change Theme <ArrowDropDownIcon/> */}
-            {/* <option>Change Theme</option> */}
-            {/* <option>Default</option>
-            <option>Dark</option>
-            <option>pink</option>
-          </select>  */}
-          {/* <div className="dropdown" >
-            <ul className={` ${open ? 'open' : null}`}>
-              {data.map((theme, index) => {
-                return (
-
-                  <li key={index} onClick={() => {
-                    setThemes(theme.name)
-                    setOpen(false)
-                  }} >{theme.name}</li>
-
-                )
-              })}
-            </ul>
-          </div> */}
 
         </div>
       </div>
