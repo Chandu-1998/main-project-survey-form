@@ -120,7 +120,7 @@ const SurveyForm = () => {
             console.log(val, key)
         })
 
-        fetch("http://localhost:8080/createForm", {
+        fetch("https://survey-form-example-8.onrender.com/createForm", {
             method: "POST",
             headers:{Authorization:token},
             body: questionData 

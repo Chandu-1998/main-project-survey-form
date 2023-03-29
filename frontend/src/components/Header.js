@@ -16,7 +16,7 @@ const Header = () => {
     const navigate = useNavigate()
 
     const fetchtheme = async () => {
-        await fetch("http://localhost:8080/api/themes")
+        await fetch("https://survey-form-example-8.onrender.com/api/themes")
             .then((res) => res.json())
             .then((data) => {
 
@@ -61,11 +61,11 @@ const Header = () => {
         if (url) {
             const formData = new FormData();
             formData.append("image", url)
-            fetch("http://localhost:8080/profile", {
+            fetch("https://survey-form-example-8.onrender.com/profile", {
                 method: "POST",
                 body: formData
             })
-            fetch("http://localhost:8080/profile")
+            fetch("https://survey-form-example-8.onrender.com/profile")
                 .then(res => res.json())
                 .then(data => { setProfile(data.image) })
 
@@ -74,7 +74,7 @@ const Header = () => {
     }, [url])
 
     useEffect(() => {
-        fetch("http://localhost:8080/profile")
+        fetch("https://survey-form-example-8.onrender.com/profile")
             .then(res => res.json())
             .then(data => { setProfile(data.image[0].image) })
         console.log(profile)

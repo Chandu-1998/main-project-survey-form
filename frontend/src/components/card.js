@@ -10,7 +10,7 @@ const Card = ({ details }) => {
 
    const handleDelete = (id) =>{
     const token = sessionStorage.getItem("token")
-    fetch(`http:localhost:8080/createForm/delete?id=${id}` ,{
+    fetch(`https://survey-form-example-8.onrender.com/createForm/delete?id=${id}` ,{
         method:"DELETE",
         headers:{Authorization:token}
     }).then((res) => res.json())

@@ -32,7 +32,7 @@ const Themes = () => {
   }])
 
   const fetchtheme = async () => {
-    await fetch("http://localhost:8080/api/themes")
+    await fetch("https://survey-form-example-8.onrender.com/api/themes")
       .then((res) => res.json())
       .then((data) => {
 
@@ -80,7 +80,7 @@ const Themes = () => {
     const token = sessionStorage.getItem("token")
     console.log("hii")
 
-    fetch("http://localhost:8080/createForm", {
+    fetch("https://survey-form-example-8.onrender.com/createForm", {
       method: "POST",
       headers: { Authorization: token },
       body: questionData

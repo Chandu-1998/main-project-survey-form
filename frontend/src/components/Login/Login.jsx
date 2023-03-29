@@ -16,7 +16,7 @@ function Login() {
         const formData = new FormData()
         formData.append("email",email)
         formData.append("password",password)
-        const response = await fetch('http://localhost:8080/user/login', {
+        const response = await fetch('https://survey-form-example-8.onrender.com/user/login', {
             method: 'POST',
             body:formData,
         
