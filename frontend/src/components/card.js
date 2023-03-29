@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import { ThemeContext } from "../App";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ details }) => {
 
-    
+const navigate = useNavigate()    
     const { themes,getData } = useContext(ThemeContext)
 
    const handleDelete = (id) =>{
@@ -29,7 +30,7 @@ const Card = ({ details }) => {
                     <h6>{details.startDate}</h6>
                     <h6>{details.endDate}</h6>
                     <h6>
-                        <EditIcon className="edit-icon"  />
+                        <EditIcon className="edit-icon" onClick={()=>{navigate('/surveyForm')}} />
                         <DeleteIcon className="delete-icon" onClick={()=>{handleDelete(details._id)}}/>
                     </h6>
                 </div>
