@@ -32,7 +32,7 @@ const List = () => {
                 formdata.append("image",url)
                 formdata.append("otherCriteria", otherCriteria)
 
-                fetch("http://localhost:8080/createForm/list" , {
+                fetch("https://survey-form-example-8.onrender.com/createForm/list" , {
                     method:"POST",
                     body:formdata,
                     headers:{Authorization:token}
