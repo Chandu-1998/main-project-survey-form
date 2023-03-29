@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-// import "./Styles/survey-list.css"
 import './styles/survey-list.css'
 import data from "../data.json"
 import SearchIcon from '@mui/icons-material/Search';
@@ -10,7 +9,6 @@ import Sidebar from './Sidebar';
 import Card from "./card";
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import SortIcon from '@mui/icons-material/Sort';
-// console.log(data)
 const SurveyList = () => {
 
     const { themes, first, getData, data } = useContext(ThemeContext)

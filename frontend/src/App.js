@@ -1,16 +1,15 @@
-
 import './App.css';
 import { useState, useEffect, createContext } from 'react';
 import { Routes, Route, BrowserRouter } from "react-router-dom"
-import Header from './Components/Header';
-import Sidebar from './Components/Sidebar';
-import SurveyList from './Components/survey-list';
-import Preview from "./Components/preview"
-import Login from './Components/LogIn/Login';
-import Register from './Components/Register/Register';
-import SurveyForm from './Components/survey-form';
-import List from './Components/Survey/List.jsx';
-import Themes from './Components/theme/Theme';
+import Preview from "./components/preview"
+import Login from "./components/Login/Login"
+import Register from "./components/Register/Register"
+import SurveyForm from "./components/survey-form"
+import List from "./components/Survey/List"
+import SurveyList from "./components/survey-list"
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import Themes from "./components/theme/Theme";
 
 
 export const ThemeContext = createContext()
@@ -21,7 +20,7 @@ function App() {
 
   const [themes, setThemes] = useState([])
   const [first, setFirst] = useState(0)
-  const [data,setData]=useState([])
+  const [data, setData] = useState([])
   const formdata = new FormData()
   const questionData = new FormData()
 
@@ -36,16 +35,14 @@ function App() {
       .then(data => setData(data.lists))
 
   }
-  const value = { themes, setThemes, first, setFirst, formdata, questionData, getData,data,setData }
+  const value = { themes, setThemes, first, setFirst, formdata, questionData, getData, data, setData }
 
   return (
     <ThemeContext.Provider value={value}  >
       <div className="App">
 
         <BrowserRouter>
-          {/* <Header/>
-        <Sidebar/> */}
-        {/* <Themes/>   */}
+
           <Routes>
             <Route path='/' element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -53,9 +50,9 @@ function App() {
             <Route path="/main" element={<SurveyList />} />
             <Route path="/surveyForm" element={<List />} />
             <Route path="/preview" element={<Preview />} />
-            <Route path='/Themes' element={<Themes/>}/>
+            <Route path='/Themes' element={<Themes />} />
             <Route path="/form" element={<SurveyForm />} />
-            <Route path="/header" element={<Header/>} />
+            <Route path="/header" element={<Header />} />
             <Route path="/sidebar" element={<Sidebar />} />
 
 

@@ -3,7 +3,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate,useLocation, Link } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
-import "./Styles/form.css"
+import "../components/styles/form.css"
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Header from "./Header";
