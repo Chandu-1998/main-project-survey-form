@@ -1,28 +1,26 @@
 import './App.css';
 import { useState, useEffect, createContext } from 'react';
 import { Routes, Route, BrowserRouter } from "react-router-dom"
-
-
-// import Header from './Components/Header';
-// import Sidebar from './Components/Sidebar';
-// import SurveyList from './Components/survey-list';
-// import Preview from "./Components/preview"
-// import Login from './Components/LogIn/Login';
-// import Register from './Components/Register/Register';
-// import SurveyForm from './Components/survey-form';
-// import List from './Components/Survey/List.jsx';
+import Header from './Components/Header';
+import Sidebar from './Components/Sidebar';
+import SurveyList from './Components/survey-list';
+import Preview from "./Components/preview"
+import Login from './Components/LogIn/Login';
+import Register from './Components/Register/Register';
+import SurveyForm from './Components/survey-form';
+import List from './Components/Survey/List.jsx';
+import Themes from './Components/theme/Theme';
 // import Themes from './components/Themes';
 // import Header from './Components/Header';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import SurveyList from './components/survey-list';
-import Preview from './components/preview';
-import Login from './components/Login/Login'
-import Register from './components/Register/Register';
-import SurveyForm from './components/survey-form';
-import List from './components/survey-form';
-import Themes from './components/Themes';
-
+// import Header from './components/Header';
+// import Sidebar from './components/Sidebar';
+// import SurveyList from './components/survey-list';
+// import Preview from './components/preview';
+// import Login from './components/Login/Login'
+// import Register from './components/Register/Register';
+// import SurveyForm from './components/survey-form';
+// import List from './components/survey-form';
+// import Themes from './components/Themes';
 
 export const ThemeContext = createContext()
 
@@ -55,8 +53,8 @@ function App() {
 
         <BrowserRouter>
           {/* <Header/>
-
-
+        <Sidebar/> */}
+        {/* <Themes/>   */}
           <Routes>
             <Route path='/' element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -64,11 +62,7 @@ function App() {
             <Route path="/main" element={<SurveyList />} />
             <Route path="/surveyForm" element={<List />} />
             <Route path="/preview" element={<Preview />} />
-
-
-            <Route path='/Themes' element={<Themes /> } />
-
-
+            <Route path='/Themes' element={<Themes/>}/>
             <Route path="/form" element={<SurveyForm />} />
             <Route path="/header" element={<Header/>} />
             <Route path="/sidebar" element={<Sidebar />} />
